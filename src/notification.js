@@ -12,7 +12,7 @@ export const Notification = ({ message }) => {
   useEffect(() => {
     if (message.autoClose) {
       const fadeTimer = setTimeout(() => setClosing(true), timeVisible)
-      const closeTimer = setTimeout(() => closeNotification(message), timeVisible)
+      const closeTimer = setTimeout(() => closeNotification(message), timeVisible + timeFading)
       return () => {
         clearTimeout(fadeTimer)
         clearTimeout(closeTimer)
@@ -30,7 +30,7 @@ export const Notification = ({ message }) => {
       closeNotification(message)
     }, timeFading)
     return () => clearTimeout(closeTimer)
-  }, [closeNotification, message.id])
+  }, [closeNotification, message, timeFading])
 
   return (
     <div className={ classnames(classes.notification, colors[message.type], closing ? classes.closing : undefined) } onClick={ handleClick } >
