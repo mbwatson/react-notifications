@@ -131,7 +131,7 @@ const ExampleButtons = () => {
       </Grid>
 
       <h2>with callbacks</h2>
-      <p>the <code>onClose</code> callback prop will fire on close</p>
+      <p>the <code>onClick</code> and <code>onClose</code> props provide callbacks that fire when the notification is clicked and when it closes.</p>
 
       <Grid fluid>
         <Row className="row">
