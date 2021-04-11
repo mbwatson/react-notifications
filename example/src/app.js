@@ -139,7 +139,10 @@ const ExampleButtons = () => {
       <Grid fluid>
         <Row className="row">
           <Col xs={ 12 } lg={ 2 } className="column description">
-            <button onClick={ () => addNotification({ type: 'warning', text: 'you will be alerted upon click.', onClick: () => alert('clicked!') })}>notify me!</button>
+            <h3>onClick</h3>
+            <div>
+              <button onClick={ () => addNotification({ type: 'warning', text: 'you will be alerted upon click.', onClick: () => alert('clicked!') })}>notify me!</button>
+            </div>
           </Col>
           <Col component="pre" xs={ 12 } lg={ 10 } className="column code">
 {`<button onClick={
@@ -162,7 +165,10 @@ const ExampleButtons = () => {
       <Grid fluid>
         <Row className="row">
           <Col xs={ 12 } lg={ 2 } className="column description">
-            <button onClick={ () => addNotification({ type: 'success', text: 'you will be alerted upon closing.', onClose: () => alert('closed!'), }) }>notify me!</button>
+            <h3>onClose</h3>
+            <div>
+              <button onClick={ () => addNotification({ type: 'success', text: 'you will be alerted upon closing.', onClose: () => alert('closed!'), }) }>notify me!</button>
+            </div>
           </Col>
           <Col component="pre" xs={ 12 } lg={ 10 } className="column code">
 {`<button onClick={
