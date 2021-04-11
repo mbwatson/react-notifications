@@ -52,6 +52,7 @@ pre, code {
 pre {
   line-height: 2.5;
   padding: 0 2rem;
+  overflow-x: auto;
 }
 
 code {

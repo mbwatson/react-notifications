@@ -42,7 +42,7 @@ const ExampleButtons = () => {
 <button onClick={ () => addNotification({ type: 'warning', text: 'this indicates warning. you must close me.', autoClose: false }) }>warning</button>
       `}</pre>
 
-      <h2>with a closing callback</h2>
+      <h2>with callbacks</h2>
       <p>the <code>onClose</code> callback prop will fire on close</p>
       <FlexGroup>
         <button onClick={
