@@ -76,7 +76,7 @@
   filter: opacity(0.2);
 }
 .notification .overlay.auto-close {
-  animation: shrink 4000ms linear forwards;
+  animation: shrink 4750ms linear forwards;
   transform-origin: 0 50%;
 }
 .notification.closing {
