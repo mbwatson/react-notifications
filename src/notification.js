@@ -12,7 +12,7 @@ export const Notification = ({ message }) => {
   useEffect(() => {
     if (message.autoClose) {
       const fadeTimer = setTimeout(() => setClosing(true), timeVisible)
-      const closeTimer = setTimeout(() => closeNotification(message.id), timeVisible + timeFading)
+      const closeTimer = setTimeout(() => closeNotification(message), timeVisible)
       return () => {
         clearTimeout(fadeTimer)
         clearTimeout(closeTimer)
