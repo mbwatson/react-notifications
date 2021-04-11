@@ -43,9 +43,17 @@ button {
   text-transform: uppercase;
 }
 
-pre {
+pre, code {
   background-color: #345;
   color: #eee;
+  border-radius: 0.25rem;
+}
+
+pre {
   line-height: 2.5;
   padding: 0 2rem;
+}
+
+code {
+  padding: 0.25rem 0.5rem;
 }

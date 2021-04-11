@@ -9,6 +9,8 @@ export const Notification = ({ message }) => {
   const { closeNotification, colors, icons, timeVisible, timeFading } = useNotifications()
   const [closing, setClosing] = useState(false)
 
+  console.log(message)
+
   useEffect(() => {
     if (message.autoClose) {
       const fadeTimer = setTimeout(() => setClosing(true), timeVisible)
@@ -20,14 +22,17 @@ export const Notification = ({ message }) => {
     }
   }, [closeNotification, message.autoClose, message.id, timeVisible])
 
-  const close = useCallback(() => {
+  const handleClose = useCallback(() => {
     setClosing(true)
-    const closeTimer = setTimeout(() => closeNotification(message.id), timeFading)
+    const closeTimer = setTimeout(() => {
+      closeNotification(message.id)
+        message.onClose()
+      }, timeFading)
     return () => clearTimeout(closeTimer)
   }, [closeNotification, message.id])
 
   return (
-    <div className={ classnames(classes.notification, colors[message.type], closing ? classes.closing : undefined) } onClick={ close } >
+    <div className={ classnames(classes.notification, colors[message.type], closing ? classes.closing : undefined) } onClick={ handleClose } >
       <div className={ classes.icon } style={{ backgroundColor: colors[message.type] }}>{ icons[message.type] }</div>
       <div className={ classnames(classes.overlay, message.autoClose ? classes['auto-close'] : undefined) } style={{ backgroundColor: colors[message.type] }}/>
       <div className={ classes.text } style={{ color: colors[message.type] }}>
@@ -46,5 +51,6 @@ Notification.propTypes = {
     id: PropTypes.oneOfType([PropTypes.number, PropTypes.string]).isRequired,
     text: PropTypes.string.isRequired,
     autoClose: PropTypes.bool.isRequired,
+    onClose: PropTypes.func,
   }).isRequired,
 }
