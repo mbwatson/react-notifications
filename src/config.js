@@ -22,4 +22,5 @@ export const types = ['error', 'info', 'success', 'warning']
 
 export const defaults = {
   autoClose: true,
+  type: 'info',
 }
