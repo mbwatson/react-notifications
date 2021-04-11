@@ -1,6 +1,7 @@
 import React from 'react'
 
-export const timeout = 5000
+export const timeVisible = 5000 // ms
+export const timeFading = 250 // ms
 
 export const colors = {
   error: '#c16a5d',

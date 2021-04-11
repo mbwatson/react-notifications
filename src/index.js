@@ -7,7 +7,7 @@ export const NotificationsContext = createContext({})
 
 export const useNotifications = () => useContext(NotificationsContext)
 
-export const Notifications = ({ timeout, children }) => {
+export const Notifications = ({ timeVisible, timeFading, children }) => {
   const [queue, setQueue] = useState([])
 
   const addNotification = message => {
@@ -30,7 +30,8 @@ export const Notifications = ({ timeout, children }) => {
         addNotification, closeNotification,
         colors: config.colors,
         icons: config.icons,
-        timeout: timeout
+        timeVisible: timeVisible,
+        timeFading: timeFading,
       }}
     >
       { children }
@@ -46,10 +47,11 @@ Notifications.propTypes = {
     success: PropTypes.string.isRequired,
     warning: PropTypes.string.isRequired,
   }).isRequired,
-  timeout: PropTypes.number.isRequired,
+  timeVisible: PropTypes.number.isRequired,
 }
 
 Notifications.defaultProps = {
   colors: config.colors,
-  timeout: config.timeout,
+  timeVisible: config.timeVisible,
+  timeFading: config.timeFading,
 }

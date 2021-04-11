@@ -4,27 +4,25 @@ import classnames from 'classnames'
 import { useNotifications } from './'
 import { types } from './config'
 import classes from './styles.module.css'
-const fadeOutTime = 250 // ms
 
 export const Notification = ({ message }) => {
-  console.log(message)
-  const { closeNotification, colors, icons, timeout } = useNotifications()
+  const { closeNotification, colors, icons, timeVisible, timeFading } = useNotifications()
   const [closing, setClosing] = useState(false)
 
   useEffect(() => {
     if (message.autoClose) {
-      const fadeTimer = setTimeout(() => setClosing(true), timeout)
-      const closeTimer = setTimeout(() => closeNotification(message.id), timeout + fadeOutTime)
+      const fadeTimer = setTimeout(() => setClosing(true), timeVisible)
+      const closeTimer = setTimeout(() => closeNotification(message.id), timeVisible + timeFading)
       return () => {
         clearTimeout(fadeTimer)
         clearTimeout(closeTimer)
       }
     }
-  }, [closeNotification, message.autoClose, message.id, timeout])
+  }, [closeNotification, message.autoClose, message.id, timeVisible])
 
   const close = useCallback(() => {
     setClosing(true)
-    const closeTimer = setTimeout(() => closeNotification(message.id), fadeOutTime)
+    const closeTimer = setTimeout(() => closeNotification(message.id), timeFading)
     return () => clearTimeout(closeTimer)
   }, [closeNotification, message.id])
 
