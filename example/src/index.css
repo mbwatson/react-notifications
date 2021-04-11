@@ -20,8 +20,8 @@ body {
 }
 
 header, footer {
-  background-color: #567;
-  color: #eef;
+  background-color: darksalmon;
+  color: #222;
   padding: 2rem;
   display: flex;
   justify-content: center;
@@ -38,7 +38,7 @@ main {
 }
 
 h2 {
-  border-bottom: 1px solid #345;
+  border-bottom: 1px solid #222;
 }
 
 button {
@@ -53,17 +53,17 @@ button {
   padding: 1rem;
 }
 
-.description {
+.column.description {
   display: flex;
   justify-content: center;
   align-items: flex-start;
 }
 
-.code {
+.column.code {
 }
 
 pre, code {
-  background-color: #345;
+  background-color: #222;
   color: #eee;
   border-radius: 0.25rem;
 }
@@ -76,5 +76,5 @@ pre {
 }
 
 code {
-  padding: 0.25rem 0.5rem;
+  padding: 0.25rem 0.33rem;
 }
