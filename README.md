@@ -4,6 +4,11 @@
 
 [![NPM](https://img.shields.io/npm/v/react-notifications.svg)](https://www.npmjs.com/package/react-notifications) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
+
+## Demo
+
+[https://mbwatson.github.io/react-notifications](live demo) with lots of examples. code lives in the `example` directory.
+
 ## Install
 
 ```bash
