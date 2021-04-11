@@ -1,9 +1,97 @@
-/* add css module styles here (optional) */
+@keyframes fadeIn {
+  0% {
+    opacity: 0.0;
+    transform: translateY(100%);
+  }
+  100% {
+    opacity: 1.0;
+    transform: translateY(0);
+  }
+}
 
-.test {
-  margin: 2em;
-  padding: 0.5em;
-  border: 2px solid #000;
-  font-size: 2em;
-  text-align: center;
+@keyframes fadeOut {
+  0% {
+    opacity: 1.0;
+  }
+  100% {
+    opacity: 0.0;
+  }
+}
+
+@keyframes shrink {
+  0% {
+    transform: scaleX(1.0);
+    filter: opacity(0.2);
+  }
+  100% {
+    transform: scaleX(0.0);
+    filter: opacity(0.1);
+  }
+}
+
+.notification {
+  position: relative;
+  background-color: white;
+  cursor: pointer;
+  animation: fadeIn 100ms ease-out normal;
+  border-radius: 4px;
+  transition: filter 250ms;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.2)) brightness(1.0);
+  overflow: hidden;
+}
+.notification:hover {
+  filter: drop-shadow(0 0 7px rgba(0, 0, 0, 0.25)) brightness(1.1);
+}
+.notification .close-button {
+  transition: filter 250ms;
+  filter: opacity(0.25);
+  padding: 0.5rem;
+}
+.notification:hover .close-button {
+  filter: opacity(1.0);
+}
+.notification .close-text {
+  font-size: 75%;
+}
+.notification .icon {
+  padding: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.notification .text {
+  flex: 1;
+  padding: 1rem;
+  background-color: transparent;
+}
+.notification .overlay {
+  position: absolute;
+  left: 2.5rem;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  filter: opacity(0.2);
+}
+.notification .overlay.auto-close {
+  animation: shrink 4000ms linear forwards;
+  transform-origin: 0 50%;
+}
+.notification.closing {
+  animation: fadeOut 250ms ease-out forwards;
+}
+
+.tray {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - 1rem);
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 0.5rem;
 }
