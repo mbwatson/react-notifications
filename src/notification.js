@@ -18,7 +18,7 @@ export const Notification = ({ message }) => {
         clearTimeout(closeTimer)
       }
     }
-  }, [closeNotification, message.autoClose, message.id, timeVisible])
+  }, [closeNotification, message, timeVisible])
 
   const handleClick = useCallback(() => {
     setClosing(true)
