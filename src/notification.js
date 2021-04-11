@@ -23,8 +23,11 @@ export const Notification = ({ message }) => {
   const handleClose = useCallback(() => {
     setClosing(true)
     const closeTimer = setTimeout(() => {
-      closeNotification(message.id)
+      let getType = {}
+      if (getType.toString.call(message.onClose) === '[object Function]') {
         message.onClose()
+      }
+      closeNotification(message.id)
       }, timeFading)
     return () => clearTimeout(closeTimer)
   }, [closeNotification, message.id])
