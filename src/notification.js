@@ -20,20 +20,20 @@ export const Notification = ({ message }) => {
     }
   }, [closeNotification, message.autoClose, message.id, timeVisible])
 
-  const handleClose = useCallback(() => {
+  const handleClick = useCallback(() => {
     setClosing(true)
     const closeTimer = setTimeout(() => {
-      let getType = {}
-      if (getType.toString.call(message.onClose) === '[object Function]') {
-        message.onClose()
+      var getType = {}
+      if (message.onClick && getType.toString.call(message.onClick) === '[object Function]') {
+        message.onClick()
       }
-      closeNotification(message.id)
-      }, timeFading)
+      closeNotification(message)
+    }, timeFading)
     return () => clearTimeout(closeTimer)
   }, [closeNotification, message.id])
 
   return (
-    <div className={ classnames(classes.notification, colors[message.type], closing ? classes.closing : undefined) } onClick={ handleClose } >
+    <div className={ classnames(classes.notification, colors[message.type], closing ? classes.closing : undefined) } onClick={ handleClick } >
       <div className={ classes.icon } style={{ backgroundColor: colors[message.type] }}>{ icons[message.type] }</div>
       <div className={ classnames(classes.overlay, message.autoClose ? classes['auto-close'] : undefined) } style={{ backgroundColor: colors[message.type] }}/>
       <div className={ classes.text } style={{ color: colors[message.type] }}>
@@ -52,6 +52,7 @@ Notification.propTypes = {
     id: PropTypes.oneOfType([PropTypes.number, PropTypes.string]).isRequired,
     text: PropTypes.string.isRequired,
     autoClose: PropTypes.bool.isRequired,
+    onClick: PropTypes.func,
     onClose: PropTypes.func,
   }).isRequired,
 }

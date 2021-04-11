@@ -20,8 +20,12 @@ export const Notifications = ({ timeVisible, timeFading, children }) => {
     setQueue([ ...queue, newMessage])
   }
 
-  const closeNotification = useCallback(id => {
-    setQueue(queue => queue.filter(message => message.id !== id))
+  const closeNotification = useCallback(message => {
+    var getType = {}
+    if (message.onClose && getType.toString.call(message.onClose) === '[object Function]') {
+      message.onClose()
+    }
+    setQueue(queue => queue.filter(msg => msg.id !== message.id))
   }, [])
 
   return (

@@ -46,21 +46,25 @@ const ExampleButtons = () => {
       <p>the <code>onClose</code> callback prop will fire on close</p>
       <FlexGroup>
         <button onClick={
-          () => addNotification({
-            type: 'warning',
-            text: 'i will alert on close.',
-            onClose: () => alert('closed!'),
-          })
-        }>alerting warning</button>
+          () => addNotification({ type: 'warning', text: 'i will alert on click.', onClick: () => alert('clicked!'), })
+        }>warning, alert on click</button>
+        <button onClick={
+          () => addNotification({ type: 'warning', text: 'i will alert on close.', onClose: () => alert('closed!'), })
+        }>warning, alert on close</button>
+        <button onClick={
+          () => addNotification({ type: 'warning', text: 'i will alert on click and close.', onClick: () => alert('clicked!'), onClose: () => alert('closed!'), })
+        }>warning, alert on click and close</button>
       </FlexGroup>
       <pre>{`
 <button onClick={
-  () => addNotification({
-    type: 'warning',
-    text: 'i will alert on close.',
-    onClose: () => alert('closed!'),
-  })
-}>alerting warning</button>
+  () => addNotification({ type: 'warning', text: 'i will alert on click.', onClick: () => alert('clicked!'), })
+}>warning, alert on click</button>
+<button onClick={
+  () => addNotification({ type: 'warning', text: 'i will alert on close.', onClose: () => alert('closed!'), })
+}>warning, alert on close</button>
+<button onClick={
+  () => addNotification({ type: 'warning', text: 'i will alert on click and close.', onClick: () => alert('clicked!'), onClose: () => alert('closed!'), })
+}>warning, alert on click and close</button>
       `}</pre>
       
     </Fragment>
