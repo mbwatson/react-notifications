@@ -12,7 +12,7 @@ npm install --save react-notifications
 
 ## Usage
 
-import the `Notifications` component from `@renci/react-notifications`...
+import the `Notifications` component from `@mwatson/react-notifications`...
 
 
 ```jsx
