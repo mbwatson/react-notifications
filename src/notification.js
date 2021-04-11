@@ -9,8 +9,6 @@ export const Notification = ({ message }) => {
   const { closeNotification, colors, icons, timeVisible, timeFading } = useNotifications()
   const [closing, setClosing] = useState(false)
 
-  console.log(message)
-
   useEffect(() => {
     if (message.autoClose) {
       const fadeTimer = setTimeout(() => setClosing(true), timeVisible)
