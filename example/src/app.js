@@ -7,174 +7,140 @@ const ExampleButtons = () => {
   const { addNotification } = useNotifications()
   return (
     <Fragment>
-      <h2>self-closing (default)</h2>
-      <p>these notifications will close by themselves but can be closed early by clicking them.</p>
+      <h2>types</h2>
+
+      <p>
+        there are four notification <em>types</em>: <strong>error</strong>, <strong>info</strong>, <strong>success</strong>, and <strong>warning</strong>.
+      </p>
+
+      <br/><br/>
 
       <Grid fluid>
         <Row className="row">
-          <Col xs={ 12 } lg={ 4 } className="column description">
-            <button onClick={ () => addNotification({ type: 'error', text: 'this indicates error. i will close.'}) }>error</button>
+          <Col xs={ 12 } lg={ 2 } className="column description">
+            <button onClick={ () => addNotification({ type: 'error', text: 'this indicates an error. i will close automatically.'}) }>notify</button>
           </Col>
-          <Col component="pre" xs={ 12 } lg={ 8 } className="column code">
+          <Col component="pre" xs={ 12 } lg={ 10 } className="column code">
 {`<button onClick={
   () => addNotification({
     type: 'error',
-    text: 'this indicates error. i will close.',
+    text: 'this indicates an error. i will close automatically.',
   })
-}>error</button>`}
+}>notify</button>`}
           </Col>
         </Row>
         <Row className="row">
-          <Col xs={ 12 } lg={ 4 } className="column description">
-            <button onClick={ () => addNotification({ type: 'info', text: 'this indicates info. i will close.'}) }>info</button>
+          <Col xs={ 12 } lg={ 2 } className="column description">
+            <button onClick={ () => addNotification({ type: 'info', text: 'this indicates information. i will close automatically.'}) }>notify</button>
           </Col>
-          <Col component="pre" xs={ 12 } lg={ 8 } className="column code">
+          <Col component="pre" xs={ 12 } lg={ 10 } className="column code">
 {`<button onClick={
   () => addNotification({
     type: 'info',
-    text: 'this indicates info. i will close.',
+    text: 'this indicates information. i will close automatically.',
   })
-}>info</button>`}
+}>notify</button>`}
           </Col>
         </Row>
         <Row className="row">
-          <Col xs={ 12 } lg={ 4 } className="column description">
-            <button onClick={ () => addNotification({ type: 'success', text: 'this indicates success. i will close.'}) }>success</button>
+          <Col xs={ 12 } lg={ 2 } className="column description">
+            <button onClick={ () => addNotification({ type: 'success', text: 'this indicates success. i will close automatically.'}) }>notify</button>
           </Col>
-          <Col component="pre" xs={ 12 } lg={ 8 } className="column code">
+          <Col component="pre" xs={ 12 } lg={ 10 } className="column code">
 {`<button onClick={
   () => addNotification({
     type: 'success',
-    text: 'this indicates success. i will close.',
+    text: 'this indicates success. i will close automatically.',
   })
-}>success</button>`}
+}>notify</button>`}
           </Col>
         </Row>
         <Row className="row">
-          <Col xs={ 12 } lg={ 4 } className="column description">
-            <button onClick={ () => addNotification({ type: 'warning', text: 'this indicates warning. i will close.'}) }>warning</button>
+          <Col xs={ 12 } lg={ 2 } className="column description">
+            <button onClick={ () => addNotification({ type: 'warning', text: 'this indicates a warning. i will close automatically.'}) }>notify</button>
           </Col>
-          <Col component="pre" xs={ 12 } lg={ 8 } className="column code">
+          <Col component="pre" xs={ 12 } lg={ 10 } className="column code">
 {`<button onClick={
   () => addNotification({
     type: 'warning',
-    text: 'this indicates warning. i will close.',
+    text: 'this indicates a warning. i will close automatically.',
   })
-}>warning</button>`}
+}>notify</button>`}
           </Col>
         </Row>
       </Grid>
 
-      <h2>manual close</h2>
-      <p>these notifications need to be closed manually by clicking them.</p>
+      <h2>auto-close</h2>
+
+      <p>
+        the value of the <code>autoClose</code> property of the message object determines whether the notification closes itself.
+        the default value is <code>true</code>.
+      </p>
+
+      <br/><br/>
 
       <Grid fluid>
         <Row className="row">
-          <Col xs={ 12 } lg={ 4 } className="column description">
-            <button onClick={ () => addNotification({ type: 'error', text: 'this indicates error. you must close me.', autoClose: false }) }>error</button>
+          <Col xs={ 12 } lg={ 2 } className="column description">
+            <button onClick={ () => addNotification({ type: 'error', text: 'this indicates an error. you must close me.', autoClose: false }) }>notify</button>
           </Col>
-          <Col component="pre" xs={ 4 } lg={ 8 } className="column code">
+          <Col component="pre" xs={ 12 } lg={ 10 } className="column code">
 {`<button onClick={
   () => addNotification({
     type: 'error',
-    text: 'this indicates error. you must close me.',
+    text: 'this indicates an error. you must close me.',
     autoClose: false,
   })
-}>error</button>`}
+}>notify</button>`}
           </Col>
         </Row>
 
-        <Row className="row">
-          <Col xs={ 12 } lg={ 4 } className="column description">
-            <button onClick={ () => addNotification({ type: 'info', text: 'this indicates info. you must close me.', autoClose: false }) }>info</button>
-          </Col>
-          <Col component="pre" xs={ 4 } lg={ 8 } className="column code">
-{`<button onClick={
-  () => addNotification({
-    type: 'info',
-    text: 'this indicates info. you must close me.',
-    autoClose: false,
-  })
-}>info</button>`}
-          </Col>
-        </Row>
-
-        <Row className="row">
-          <Col xs={ 12 } lg={ 4 } className="column description">
-            <button onClick={ () => addNotification({ type: 'success', text: 'this indicates success. you must close me.', autoClose: false }) }>success</button>
-          </Col>
-          <Col component="pre" xs={ 4 } lg={ 8 } className="column code">
-{`<button onClick={
-  () => addNotification({
-    type: 'success',
-    text: 'this indicates success. you must close me.',
-    autoClose: false,
-  })
-}>success</button>`}
-          </Col>
-        </Row>
-
-        <Row className="row">
-          <Col xs={ 12 } lg={ 4 } className="column description">
-            <button onClick={ () => addNotification({ type: 'warning', text: 'this indicates warning. you must close me.', autoClose: false }) }>warning</button>
-          </Col>
-          <Col component="pre" xs={ 4 } lg={ 8 } className="column code">
-{`<button onClick={
-  () => addNotification({
-    type: 'warning',
-    text: 'this indicates warning. you must close me.',
-    autoClose: false,
-  })
-}>warning</button>`}
-          </Col>
-        </Row>
       </Grid>
 
-      <h2>with callbacks</h2>
-      <p>the <code>onClick</code> and <code>onClose</code> props provide callbacks that fire when the notification is clicked and when it closes.</p>
+      <h2>callbacks</h2>
+
+      <p>
+        the <code>onClick</code> property of the message object provides a callback that fires when the notification is clicked.
+      </p>
+
+      <br/><br/>
 
       <Grid fluid>
         <Row className="row">
-          <Col xs={ 12 } lg={ 4 } className="column description">
-            <button onClick={ () => addNotification({ type: 'warning', text: 'i will alert on click.', onClick: () => alert('clicked!') })}>warning, alert on click</button>
+          <Col xs={ 12 } lg={ 2 } className="column description">
+            <button onClick={ () => addNotification({ type: 'warning', text: 'i will alert on click.', onClick: () => alert('clicked!') })}>notify</button>
           </Col>
-          <Col component="pre" xs={ 12 } lg={ 8 } className="column code">
+          <Col component="pre" xs={ 12 } lg={ 10 } className="column code">
 {`<button onClick={
   () => addNotification({
     type: 'warning',
     text: 'i will alert on click.',
     onClick: () => alert('clicked!'),
   })
-}>warning, alert on click</button>`}
+}>notify</button>`}
           </Col>
         </Row>
+      </Grid>
+
+      <p>
+        the <code>onClose</code> property of the message object provides a callback that fires when the notification closes.
+      </p>
+
+      <br/><br/>
+
+      <Grid fluid>
         <Row className="row">
-          <Col xs={ 12 } lg={ 4 } className="column description">
-            <button onClick={ () => addNotification({ type: 'warning', text: 'i will alert on close.', onClose: () => alert('closed!'), }) }>warning, alert on close</button>
+          <Col xs={ 12 } lg={ 2 } className="column description">
+            <button onClick={ () => addNotification({ type: 'warning', text: 'i will alert on close.', onClose: () => alert('closed!'), }) }>notify</button>
           </Col>
-          <Col component="pre" xs={ 12 } lg={ 8 } className="column code">
+          <Col component="pre" xs={ 12 } lg={ 10 } className="column code">
 {`<button onClick={
   () => addNotification({
     type: 'warning',
     text: 'i will alert on close.',
     onClick: () => alert('closed!'),
   })
-}>warning, alert on lose</button>`}
-          </Col>
-        </Row>
-        <Row className="row">
-          <Col xs={ 12 } lg={ 4 } className="column description">
-            <button onClick={ () => addNotification({ type: 'warning', text: 'i will alert on click and on close.', onClick: () => alert('clicked!'), onClose: () => alert('closed!'), }) }>warning, alert on click & on close</button>
-          </Col>
-          <Col component="pre" xs={ 12 } lg={ 8 } className="column code">
-{`<button onClick={
-  () => addNotification({
-    type: 'warning',
-    text: 'i will alert on click and on close.',
-    onClick: () => alert('clicked!'),
-    onClose: () => alert('closed!'),
-  })
-}>warning, alert on click and on close</button>`}
+}>notify</button>`}
           </Col>
         </Row>
       </Grid>
