@@ -58,7 +58,9 @@ the `addNotifications` function takes a `message` object, which has the followin
 {
   type: 'error' | 'info' | 'success' | 'warning',
   text: String,
-  autoClose: boolean, // default: true
+  autoClose: boolean, // optional. default: true
+  onClick: function, // optional. default: null
+  onClose: function, // optional. default: null
 }
 ```
 
