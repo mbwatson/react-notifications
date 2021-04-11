@@ -12,6 +12,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: #334;
   color: #bbc;
+  line-height: 2;
 }
 
 #root {
@@ -43,6 +44,10 @@ h2 {
   padding: 1rem 0;
 }
 
+h3 {
+  margin: 0;
+}
+
 button {
   padding: 0.5rem;
   text-transform: uppercase;
@@ -57,7 +62,8 @@ button {
 
 .column.description {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
 }
 
@@ -75,7 +81,7 @@ pre {
   overflow-x: auto;
   margin: 0;
   border: 5px solid #69a;
-  border-radius: 1rem;
+  border-radius: 0.75rem;
   filter: opacity(0.75);
   transition: filter 250ms;
 }
