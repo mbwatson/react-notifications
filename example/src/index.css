@@ -32,3 +32,20 @@ main {
   background-color: #dee;
   padding: 2rem;
 }
+
+.flex-group {
+  display: flex;
+  gap: 1rem;
+}
+
+button {
+  padding: 0.5rem;
+  text-transform: uppercase;
+}
+
+pre {
+  background-color: #345;
+  color: #eee;
+  line-height: 2.5;
+  padding: 0 2rem;
+}

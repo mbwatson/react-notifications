@@ -2,39 +2,45 @@ import React, { Fragment } from 'react'
 import { Notifications, useNotifications } from 'react-notifications'
 import 'react-notifications/dist/index.css'
 
+const FlexGroup = ({ children }) => (
+  <div className="flex-group">
+    { children }
+  </div>
+)
+
 const ExampleButtons = () => {
   const { addNotification } = useNotifications()
   return (
     <Fragment>
       <h2>self-closing (default)</h2>
       <p>these notifications will close by themselves but can be closed early by clicking them.</p>
-      <button onClick={ () => addNotification({ type: 'error', text: 'this indicates error. i will close.'}) }>
-        ERROR
-      </button>
-      <button onClick={ () => addNotification({ type: 'info', text: 'this indicates info. i will close.'}) }>
-        INFO
-      </button>
-      <button onClick={ () => addNotification({ type: 'success', text: 'this indicates success. i will close.'}) }>
-        SUCCESS
-      </button>
-      <button onClick={ () => addNotification({ type: 'warning', text: 'this indicates warning. i will close.'}) }>
-        WARNING
-      </button>
+      <FlexGroup>
+        <button onClick={ () => addNotification({ type: 'error', text: 'this indicates error. i will close.'}) }>error</button>
+        <button onClick={ () => addNotification({ type: 'info', text: 'this indicates info. i will close.'}) }>info</button>
+        <button onClick={ () => addNotification({ type: 'success', text: 'this indicates success. i will close.'}) }>success</button>
+        <button onClick={ () => addNotification({ type: 'warning', text: 'this indicates warning. i will close.'}) }>warning</button>
+      </FlexGroup>
+      <pre>{`
+<button onClick={ () => addNotification({ type: 'error', text: 'this indicates error. i will close.'}) }>error</button>
+<button onClick={ () => addNotification({ type: 'info', text: 'this indicates info. i will close.'}) }>info</button>
+<button onClick={ () => addNotification({ type: 'success', text: 'this indicates success. i will close.'}) }>success</button>
+<button onClick={ () => addNotification({ type: 'warning', text: 'this indicates warning. i will close.'}) }>warning</button>
+      `}</pre>
 
       <h2>manual close</h2>
       <p>these notifications need to be closed manually by clicking them.</p>
-      <button onClick={ () => addNotification({ type: 'error', text: 'this indicates error. you must close me.', autoClose: false }) }>
-        ERROR
-      </button>
-      <button onClick={ () => addNotification({ type: 'info', text: 'this indicates info. you must close me.', autoClose: false }) }>
-        INFO
-      </button>
-      <button onClick={ () => addNotification({ type: 'success', text: 'this indicates success. you must close me.', autoClose: false }) }>
-        SUCCESS
-      </button>
-      <button onClick={ () => addNotification({ type: 'warning', text: 'this indicates warning. you must close me.', autoClose: false }) }>
-        WARNING
-      </button>
+      <FlexGroup>
+        <button onClick={ () => addNotification({ type: 'error', text: 'this indicates error. you must close me.', autoClose: false }) }>error</button>
+        <button onClick={ () => addNotification({ type: 'info', text: 'this indicates info. you must close me.', autoClose: false }) }>info</button>
+        <button onClick={ () => addNotification({ type: 'success', text: 'this indicates success. you must close me.', autoClose: false }) }>success</button>
+        <button onClick={ () => addNotification({ type: 'warning', text: 'this indicates warning. you must close me.', autoClose: false }) }>warning</button>
+      </FlexGroup>
+      <pre>{`
+<button onClick={ () => addNotification({ type: 'error', text: 'this indicates error. you must close me.', autoClose: false }) }>error</button>
+<button onClick={ () => addNotification({ type: 'info', text: 'this indicates info. you must close me.', autoClose: false }) }>info</button>
+<button onClick={ () => addNotification({ type: 'success', text: 'this indicates success. you must close me.', autoClose: false }) }>success</button>
+<button onClick={ () => addNotification({ type: 'warning', text: 'this indicates warning. you must close me.', autoClose: false }) }>warning</button>
+      `}</pre>
       
     </Fragment>
   )
@@ -45,7 +51,7 @@ const App = ({ children }) => {
     <Fragment>
       <Notifications>
         <header>
-          Notifications Gallery
+          Notifications
         </header>
         <main>
           <ExampleButtons />
