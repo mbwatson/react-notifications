@@ -28,10 +28,14 @@ header, footer {
   display: flex;
   align-items: center;
   filter: drop-shadow(0 0 6px rgba(0, 0, 0, 0.1));
+  flex-direction: column;
 }
 
-header {
-  justify-content: space-between;
+@media (min-width: 768px) {
+  header {
+    flex-direction: row;
+    justify-content: space-between;
+  }  
 }
 
 .header-links {
@@ -62,25 +66,33 @@ main {
   margin: auto;
 }
 
-h2, h3 {
+h1, h2, h3, h4, h5, h6 {
+}
+
+h1 {
+  font-size: 150%;
+  color: #223;
+}
+
+h3, h4 {
   padding: 1rem 0;
 }
 
-h2 {
+h3 {
   border-bottom: 2px solid #bbc;
   padding: 1rem 0;
 }
 
-h3 {
+h4 {
   border-bottom: 4px dotted #bbbbcc66;
   padding: 1rem 0;
 }
 
-h3 {
+h4 {
   margin: 0;
 }
 
-h4 {
+h5 {
   text-align: right;
 }
 
@@ -98,9 +110,18 @@ button {
 
 .column.description {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: space-between;
-  align-items: flex-end;
+  align-items: center;
+  padding: 1rem;
+}
+
+@media (min-width: 768px) {
+  .column.description {
+    align-items: flex-end;
+    flex-direction: column;
+    justify-content: space-between;
+  }  
 }
 
 .column.code {
@@ -116,7 +137,7 @@ pre {
   padding: 1rem;
   overflow-x: auto;
   margin: 0;
-  border: 5px solid #69a;
+  border: 5px solid #478;
   border-radius: 0.75rem;
   filter: opacity(0.5);
   transition: filter 250ms;
@@ -130,11 +151,11 @@ code {
   padding: 0.25rem 0.35rem;
   margin: 0 0.1rem;
   border-radius: 0.33rem;
-  border: 2px solid #69a;
+  border: 1px solid #478;
 }
 
 button {
-  background-color: #69a;
+  background-color: #478;
   border: 0;
   border-radius: 0.4rem;
   padding: 0.75rem 1rem;
@@ -142,11 +163,11 @@ button {
   font-weight: bold;
   color: white;
   filter: drop-shadow(0 0 3px rgba(0, 0, 0, 0.2)) brightness(0.8);
-  transform: scale(0.9);
-  transition: filter 250ms, transform 250ms;
+  transform: scale(1.0);
+  transition: filter 250ms, transform 150ms;
 }
 
 button:hover {
   filter: drop-shadow(0 0 8px rgba(0, 0, 0, 0.2)) brightness(1.0);
-  transform: scale(1.0);
+  transform: scale(1.05);
 }

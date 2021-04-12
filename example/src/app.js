@@ -7,16 +7,23 @@ const ExampleButtons = () => {
   const { addNotification } = useNotifications()
   return (
     <Fragment>
-      <h2>prop: message</h2>
+
+      <h2>props</h2>
+
+      <h3>prop: <code>message</code></h3>
 
       <p>
-        the <code>message</code> prop expects a message object,
-        which has the following shape.
+        the <code>message</code> prop expects a message object...
       </p>
 
-      <br/>
-      
-      <pre>{`{
+      <pre>{`<Notification message={ message } />`}
+      </pre>
+
+      <p>
+        ...which has the following shape.
+      </p>
+
+      <pre>{`message = {
   text: String,
   type: 'error' | 'info' | 'success' | 'warning',
   autoClose: boolean, // optional. default: true
@@ -27,7 +34,7 @@ const ExampleButtons = () => {
 
       <br/>
       
-      <h3>message.text</h3>
+      <h4>message.text</h4>
 
       <p>
         the value of the <code>text</code> property of the message object defines the text the show within the notification.
@@ -46,7 +53,7 @@ const ExampleButtons = () => {
         </Row>
       </Grid>
 
-      <h3>message.type</h3>
+      <h4>message.type</h4>
 
       <p>
         the <code>type</code> property of the message object determines the styling the notification receives.
@@ -58,7 +65,7 @@ const ExampleButtons = () => {
       <Grid fluid>
         <Row className="row" gutterWidth={ 64 }>
           <Col sm={ 12 } md={ 3 } xl={ 2 } className="column description">
-            <h4>error</h4>
+            <h5>error</h5>
             <div>
               <button onClick={ () => addNotification({ type: 'error', text: 'this indicates an error.'}) }>notify me!</button>
             </div>
@@ -74,7 +81,7 @@ const ExampleButtons = () => {
         </Row>
         <Row className="row" gutterWidth={ 64 }>
           <Col sm={ 12 } md={ 3 } xl={ 2 } className="column description">
-            <h4>info</h4>
+            <h5>info</h5>
             <div>
               <button onClick={ () => addNotification({ type: 'info', text: 'this indicates information.'}) }>notify me!</button>
             </div>
@@ -90,7 +97,7 @@ const ExampleButtons = () => {
         </Row>
         <Row className="row" gutterWidth={ 64 }>
           <Col sm={ 12 } md={ 3 } xl={ 2 } className="column description">
-            <h4>success</h4>
+            <h5>success</h5>
             <div>
               <button onClick={ () => addNotification({ type: 'success', text: 'this indicates success.'}) }>notify me!</button>
             </div>
@@ -106,7 +113,7 @@ const ExampleButtons = () => {
         </Row>
         <Row className="row" gutterWidth={ 64 }>
           <Col sm={ 12 } md={ 3 } xl={ 2 } className="column description">
-            <h4>warning</h4>
+            <h5>warning</h5>
             <div>
               <button onClick={ () => addNotification({ type: 'warning', text: 'this indicates a warning.'}) }>notify me!</button>
             </div>
@@ -122,7 +129,7 @@ const ExampleButtons = () => {
         </Row>
       </Grid>
 
-      <h3>message.autoClose</h3>
+      <h4>message.autoClose</h4>
 
       <p>
         the value of the <code>autoClose</code> property of the message object determines whether the notification closes itself.
@@ -148,7 +155,7 @@ const ExampleButtons = () => {
         </Row>
       </Grid>
 
-      <h3>message.onClick && message.onClose</h3>
+      <h4>message.onClick && message.onClose</h4>
 
       <p>
         the <code>onClick</code> property of the message object provides a callback that fires when the notification is clicked.
@@ -159,7 +166,7 @@ const ExampleButtons = () => {
       <Grid fluid>
         <Row className="row" gutterWidth={ 64 }>
           <Col sm={ 12 } md={ 3 } xl={ 2 } className="column description">
-            <h4>onClick</h4>
+            <h5>onClick</h5>
             <div>
               <button onClick={ () => addNotification({ type: 'warning', text: 'you will be alerted upon click.', onClick: () => alert('clicked!') })}>notify me!</button>
             </div>
@@ -185,7 +192,7 @@ const ExampleButtons = () => {
       <Grid fluid>
         <Row className="row" gutterWidth={ 64 }>
           <Col sm={ 12 } md={ 3 } xl={ 2 } className="column description">
-            <h4>onClose</h4>
+            <h5>onClose</h5>
             <div>
               <button onClick={ () => addNotification({ type: 'success', text: 'you will be alerted upon closing.', onClose: () => alert('closed!'), }) }>notify me!</button>
             </div>
@@ -217,7 +224,7 @@ const App = ({ children }) => {
           <span className="header-links">
             <a href="https://www.npmjs.com/package/react-notifications" rel="noreferrer noopener" target="_blank">
               <svg version="1.1" viewBox="0 0 540 210" x="0px" y="0px" width="54px" height="21px" xmlns="http://www.w3.org/2000/svg">
-                <path d="m150 195v-15h-150v-180h540v180h-270v30h-120zm90-30v-15h60v-120h-120v150h60zm0-75v-30h30v60h-30zm-150 15v-45h30v90h30v-120h-120v120h60zm300 0v-45h30v90h30v-90h30v90h30v-120h-180v120h60z" fill="#cb3837"/>
+                <path d="m150 195v-15h-150v-180h540v180h-270v30h-120zm90-30v-15h60v-120h-120v150h60zm0-75v-30h40v60h-30zm-150 15v-45h40v90h40v-120h-120v120h60zm300 0v-45h40v90h40v-90h40v90h40v-120h-180v120h60z" fill="#cb3837"/>
               </svg>
             </a>
             <a href="https://www.github.com/mbwatson/react-notifications" rel="noreferrer noopener" target="_blank">
