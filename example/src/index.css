@@ -22,8 +22,9 @@ body {
 }
 
 header, footer {
-  background-color: lightcoral;
-  color: #222;
+  /*background-color: lightcoral;*/
+  background-color: #16191f;
+  color: #bbc;
   padding: 2rem;
   display: flex;
   align-items: center;
@@ -67,14 +68,15 @@ main {
 }
 
 h1, h2, h3, h4, h5, h6 {
+  letter-spacing: 1px;
 }
 
 h1 {
   font-size: 150%;
-  color: #223;
+  color: #478;
 }
 
-h3, h4 {
+h2, h3, h4 {
   padding: 1rem 0;
 }
 
