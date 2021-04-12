@@ -57,6 +57,7 @@ header, footer {
 
 footer {
   justify-content: center;
+  font-family: monospace;
 }
 
 main {
@@ -69,6 +70,8 @@ main {
 
 h1, h2, h3, h4, h5, h6 {
   letter-spacing: 1px;
+  margin: 0;
+  padding: 1rem 0;
 }
 
 h1 {
@@ -76,31 +79,41 @@ h1 {
   color: #478;
 }
 
-h2, h3, h4 {
-  padding: 1rem 0;
+h2 {
+  text-transform: uppercase;
 }
 
 h3 {
   border-bottom: 2px solid #bbc;
-  padding: 1rem 0;
+}
+
+h3 code {
+  padding: 0.5rem;
 }
 
 h4 {
   border-bottom: 4px dotted #bbbbcc66;
-  padding: 1rem 0;
-}
-
-h4 {
-  margin: 0;
 }
 
 h5 {
+  font-size: 150%;
+  line-height: 1;
   text-align: right;
+  color: #bbbbcc66;
+  transition: color 250ms;
+}
+
+.row:hover h5 {
+  color: #bbbbcccc;
 }
 
 button {
   padding: 0.5rem;
   text-transform: uppercase;
+}
+
+.grid {
+  margin: 2rem 0;
 }
 
 .row {
@@ -136,7 +149,7 @@ pre, code {
 
 pre {
   line-height: 2.0;
-  padding: 1rem;
+  padding: 0.5rem;
   overflow-x: auto;
   margin: 0;
   border: 5px solid #478;
@@ -144,13 +157,18 @@ pre {
   filter: opacity(0.5);
   transition: filter 250ms;
 }
+pre::selection {
+  background-color: #44778866;
+  color: #eee;
+}
 
 pre:hover {
   filter: opacity(1.0);
 }
 
 code {
-  padding: 0.25rem 0.35rem;
+  filter: opacity(0.75);
+  padding: 0.5rem 0.33rem;
   margin: 0 0.1rem;
   border-radius: 0.33rem;
   border: 1px solid #478;

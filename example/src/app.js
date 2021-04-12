@@ -13,64 +13,61 @@ const ExampleButtons = () => {
       <h3>prop: <code>message</code></h3>
 
       <p>
-        the <code>message</code> prop expects a message object...
+        the <code>{`<Notification />`}</code> component expects a <code>message</code> object...
       </p>
 
-      <pre>{`<Notification message={ message } />`}
-      </pre>
+      <br />
+      <pre>{`<Notification message={ message } />`}</pre>
+      <br />
 
       <p>
         ...which has the following shape.
       </p>
 
+      <br />
       <pre>{`message = {
   text: String,
   type: 'error' | 'info' | 'success' | 'warning',
   autoClose: boolean, // optional. default: true
   onClick: function, // optional. default: null
   onClose: function, // optional. default: null
-}`}
-      </pre>
+}`}</pre>
 
-      <br/>
+      <br /><br />
       
-      <h4>message.text</h4>
+      <h4><code>message.text</code></h4>
 
       <p>
         the value of the <code>text</code> property of the message object defines the text the show within the notification.
       </p>
 
-      <br/>
-
-      <Grid fluid>
+      <Grid fluid className="grid">
         <Row className="row" gutterWidth={ 64 }>
-          <Col sm={ 12 } md={ 3 } xl={ 2 } className="column description">
+          <Col sm={ 12 } md={ 4 } xl={ 3 } className="column description">
             <button onClick={ () => addNotification({ text: `this is important stuff!` }) }>notify me!</button>
           </Col>
-          <Col component="pre" sm={ 12 } md={ 9 } xl={ 10 } className="column code">
+          <Col component="pre" sm={ 12 } md={ 8 } xl={ 9 } className="column code">
             {`<button onClick={ () => addNotification({ text: 'this is important stuff!' }) }>notify me!</button>`}
           </Col>
         </Row>
       </Grid>
 
-      <h4>message.type</h4>
+      <h4><code>message.type</code></h4>
 
       <p>
         the <code>type</code> property of the message object determines the styling the notification receives.
         there are four notification types; <strong>info</strong> is the default.
       </p>
 
-      <br/>
-
-      <Grid fluid>
+      <Grid fluid className="grid">
         <Row className="row" gutterWidth={ 64 }>
-          <Col sm={ 12 } md={ 3 } xl={ 2 } className="column description">
+          <Col sm={ 12 } md={ 4 } xl={ 3 } className="column description">
             <h5>error</h5>
             <div>
               <button onClick={ () => addNotification({ type: 'error', text: 'this indicates an error.'}) }>notify me!</button>
             </div>
           </Col>
-          <Col component="pre" sm={ 12 } md={ 9 } xl={ 10 } className="column code">
+          <Col component="pre" sm={ 12 } md={ 8 } xl={ 9 } className="column code">
 {`<button onClick={
   () => addNotification({
     type: 'error',
@@ -80,13 +77,13 @@ const ExampleButtons = () => {
           </Col>
         </Row>
         <Row className="row" gutterWidth={ 64 }>
-          <Col sm={ 12 } md={ 3 } xl={ 2 } className="column description">
+          <Col sm={ 12 } md={ 4 } xl={ 3 } className="column description">
             <h5>info</h5>
             <div>
               <button onClick={ () => addNotification({ type: 'info', text: 'this indicates information.'}) }>notify me!</button>
             </div>
           </Col>
-          <Col component="pre" sm={ 12 } md={ 9 } xl={ 10 } className="column code">
+          <Col component="pre" sm={ 12 } md={ 8 } xl={ 9 } className="column code">
 {`<button onClick={
   () => addNotification({
     type: 'info',
@@ -96,13 +93,13 @@ const ExampleButtons = () => {
           </Col>
         </Row>
         <Row className="row" gutterWidth={ 64 }>
-          <Col sm={ 12 } md={ 3 } xl={ 2 } className="column description">
+          <Col sm={ 12 } md={ 4 } xl={ 3 } className="column description">
             <h5>success</h5>
             <div>
               <button onClick={ () => addNotification({ type: 'success', text: 'this indicates success.'}) }>notify me!</button>
             </div>
           </Col>
-          <Col component="pre" sm={ 12 } md={ 9 } xl={ 10 } className="column code">
+          <Col component="pre" sm={ 12 } md={ 8 } xl={ 9 } className="column code">
 {`<button onClick={
   () => addNotification({
     type: 'success',
@@ -112,13 +109,13 @@ const ExampleButtons = () => {
           </Col>
         </Row>
         <Row className="row" gutterWidth={ 64 }>
-          <Col sm={ 12 } md={ 3 } xl={ 2 } className="column description">
+          <Col sm={ 12 } md={ 4 } xl={ 3 } className="column description">
             <h5>warning</h5>
             <div>
               <button onClick={ () => addNotification({ type: 'warning', text: 'this indicates a warning.'}) }>notify me!</button>
             </div>
           </Col>
-          <Col component="pre" sm={ 12 } md={ 9 } xl={ 10 } className="column code">
+          <Col component="pre" sm={ 12 } md={ 8 } xl={ 9 } className="column code">
 {`<button onClick={
   () => addNotification({
     type: 'warning',
@@ -129,22 +126,22 @@ const ExampleButtons = () => {
         </Row>
       </Grid>
 
-      <h4>message.autoClose</h4>
+      <h4><code>message.autoClose</code></h4>
 
       <p>
         the value of the <code>autoClose</code> property of the message object determines whether the notification closes itself.
         the default value is <code>true</code>.
       </p>
 
-      <Grid fluid>
+      <Grid fluid className="grid">
         <Row className="row" gutterWidth={ 64 }>
-          <Col sm={ 12 } md={ 3 } xl={ 2 } className="column description">
+          <Col sm={ 12 } md={ 4 } xl={ 3 } className="column description">
             <h5>autoClose: true</h5>
             <div>
               <button onClick={ () => addNotification({ type: 'error', text: 'this will close in a bit.', autoClose: true }) }>notify me!</button>
             </div>
           </Col>
-          <Col component="pre" sm={ 12 } md={ 9 } xl={ 10 } className="column code">
+          <Col component="pre" sm={ 12 } md={ 8 } xl={ 9 } className="column code">
 {`<button onClick={
   () => addNotification({
     type: 'error',
@@ -155,13 +152,13 @@ const ExampleButtons = () => {
           </Col>
         </Row>
         <Row className="row" gutterWidth={ 64 }>
-          <Col sm={ 12 } md={ 3 } xl={ 2 } className="column description">
+          <Col sm={ 12 } md={ 4 } xl={ 3 } className="column description">
             <h5>autoClose: false</h5>
             <div>
               <button onClick={ () => addNotification({ type: 'error', text: 'this must be closed manually.', autoClose: false }) }>notify me!</button>
             </div>
           </Col>
-          <Col component="pre" sm={ 12 } md={ 9 } xl={ 10 } className="column code">
+          <Col component="pre" sm={ 12 } md={ 8 } xl={ 9 } className="column code">
 {`<button onClick={
   () => addNotification({
     type: 'error',
@@ -173,23 +170,23 @@ const ExampleButtons = () => {
         </Row>
       </Grid>
 
-      <h4>message.onClick && message.onClose</h4>
+      <h4><code>message.onClick</code> && <code>message.onClose</code></h4>
 
       <p>
         the <code>onClick</code> property of the message object provides a callback that fires when the notification is clicked.
       </p>
 
-      <br/>
+      <br />
 
-      <Grid fluid>
+      <Grid fluid className="grid">
         <Row className="row" gutterWidth={ 64 }>
-          <Col sm={ 12 } md={ 3 } xl={ 2 } className="column description">
+          <Col sm={ 12 } md={ 4 } xl={ 3 } className="column description">
             <h5>onClick</h5>
             <div>
               <button onClick={ () => addNotification({ type: 'warning', text: 'you will be alerted upon click.', onClick: () => alert('clicked!') })}>notify me!</button>
             </div>
           </Col>
-          <Col component="pre" sm={ 12 } md={ 9 } xl={ 10 } className="column code">
+          <Col component="pre" sm={ 12 } md={ 8 } xl={ 9 } className="column code">
 {`<button onClick={
   () => addNotification({
     type: 'warning',
@@ -205,17 +202,17 @@ const ExampleButtons = () => {
         the <code>onClose</code> property of the message object provides a callback that fires when the notification closes.
       </p>
 
-      <br/>
+      <br />
 
-      <Grid fluid>
+      <Grid fluid className="grid">
         <Row className="row" gutterWidth={ 64 }>
-          <Col sm={ 12 } md={ 3 } xl={ 2 } className="column description">
+          <Col sm={ 12 } md={ 4 } xl={ 3 } className="column description">
             <h5>onClose</h5>
             <div>
               <button onClick={ () => addNotification({ type: 'success', text: 'you will be alerted upon closing.', onClose: () => alert('closed!'), }) }>notify me!</button>
             </div>
           </Col>
-          <Col component="pre" sm={ 12 } md={ 9 } xl={ 10 } className="column code">
+          <Col component="pre" sm={ 12 } md={ 8 } xl={ 9 } className="column code">
 {`<button onClick={
   () => addNotification({
     type: 'success',
@@ -227,7 +224,7 @@ const ExampleButtons = () => {
         </Row>
       </Grid>
 
-      <br/><br/>
+      <br /><br />
       
     </Fragment>
   )
