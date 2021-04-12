@@ -32,6 +32,12 @@ header, footer {
   flex-direction: column;
 }
 
+header {
+  position: fixed;
+  width: 100vw;
+  z-index: 1;
+}
+
 @media (min-width: 768px) {
   header {
     flex-direction: row;
@@ -62,10 +68,19 @@ footer {
 
 main {
   flex: 1;
-  padding: 2rem;
-  width: calc(100% - 4rem);
   max-width: 1080px;
   margin: auto;
+  margin-top: 12rem;
+  padding: 1.5rem;
+  width: calc(100% - 3rem);
+}
+
+@media (min-width: 768px) {
+  main {
+    margin-top: 8rem;
+    padding: 2rem;
+    width: calc(100% - 4rem);
+  }  
 }
 
 section {
@@ -79,7 +94,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  font-size: 150%;
+  font-size: clamp(14pt, -0.8750rem + 3vw, 24pt);
   color: #478;
 }
 
@@ -104,7 +119,7 @@ h5 {
   line-height: 1;
   text-align: right;
   color: #bbbbcc66;
-  transition: color 250ms;
+  /*transition: color 250ms;*/
 }
 
 .row:hover h5 {
@@ -132,7 +147,16 @@ button {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  gap: 1rem;
   padding: 1rem;
+}
+
+.row .column.description h5 {
+  text-shadow: 0 0 0 #bbbbcc66;
+  transition: color 250ms, text-shadow 500ms;
+}
+.row:hover .column.description h5 {
+  text-shadow: 0 0 0.5rem #bbbbcc66;
 }
 
 @media (min-width: 768px) {
@@ -152,6 +176,8 @@ pre, code {
 }
 
 pre {
+  display: flex;
+  align-items: center;
   line-height: 2.0;
   padding: 0.5rem;
   overflow-x: auto;
@@ -159,7 +185,7 @@ pre {
   border: 5px solid #478;
   border-radius: 0.75rem;
   filter: opacity(0.5);
-  transition: filter 250ms;
+  transition: filter 500ms;
 }
 pre.column {
   margin: 0;
@@ -168,7 +194,9 @@ pre::selection {
   background-color: #44778866;
   color: #eee;
 }
-
+.grid:hover pre {
+  filter: opacity(1.0);
+}
 pre:hover {
   filter: opacity(1.0);
 }

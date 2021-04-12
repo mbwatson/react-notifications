@@ -9,65 +9,63 @@ const ExampleButtons = () => {
     <Fragment>
 
       <section>
-        <h2>install</h2>
-
-        <pre>{`npm i @mwatson/react-notifications`}</pre>
-      </section>
-
-      <section>
-        <h2>import</h2>
-        
-        <h3>context provider</h3>
-        
-        <pre>{`import { Notifications } from '@mwatson/react-notifications` }</pre>
-        
-        <h3>styles</h3>
-        
-        <pre>{`import 'react-notifications/dist/index.css'` }</pre>
-        
-        <h3>usage, at a glance</h3>
+        <h2>usage, at a glance</h2>
         
         <Grid fluid className="grid">
           <Row className="row" gutterWidth={ 64 }>
             <Col sm={ 12 } md={ 4 } className="column description">
-              <button onClick={ () => addNotification({ type: 'info', text: `this is important stuff!` }) }>notify me!</button>
+              <h5>install</h5>
             </Col>
             <Col component="pre" sm={ 12 } md={ 8 } xl={ 6 } className="column code">
-{`const handleClick = () => {
-  addNotification({
-    type: 'info',
-    text: 'this is important stuff!'
-  })
+              {`npm i @mwatson/react-notifications`}
+            </Col>
+          </Row>
+          <Row className="row" gutterWidth={ 64 }>
+            <Col sm={ 12 } md={ 4 } className="column description">
+              <h5>import</h5>
+            </Col>
+            <Col component="pre" sm={ 12 } md={ 8 } xl={ 6 } className="column code">
+{`import { Notifications } from '@mwatson/react-notifications
+import 'react-notifications/dist/index.css'`}
+            </Col>
+          </Row>
+          <Row className="row" gutterWidth={ 64 }>
+            <Col sm={ 12 } md={ 4 } className="column description">
+              <h5>implement</h5>
+              <button onClick={ () => addNotification({ text: `this is important stuff!` }) }>notify me!</button>
+            </Col>
+            <Col component="pre" sm={ 12 } md={ 8 } xl={ 6 } className="column code">
+{`const handleExample = () => {
+  addNotification({ text: 'this is important stuff!' })
 }
 
-<button onClick={ handleClick }>notify me!</button>`}
+<button onClick={ handleExample }>notify me!</button>`}
             </Col>
           </Row>
         </Grid>
       </section>
 
       <section>
-        <h2>props</h2>
+        <h2>the <code>message</code> prop</h2>
 
-        <h3>prop: <code>message</code></h3>
+        <Grid fluid className="grid">
+          <Row className="row" gutterWidth={ 64 }>
+            <Col xs={ 12 } className="column">the <code>{`<Notification />`}</code> component receives a single prop, <code>message</code>, </Col>
+            <Col component="pre" xs={ 12 } className="column code">{`<Notification message={ message } />`}</Col>
+            <Col component="p" xs={ 12 } className="column">which it expects to be an object of the following shape.</Col>
+            <Col component="pre" xs={ 12 } className="column code">{`{
+  text: String,
+  type: String ('error', 'info', 'success', 'warning')       default: 'info'
+  autoClose: Boolean,                                        default: true
+  onClick: Function                                          default: null
+  onClose: Function                                          default: null
+}`}</Col>
+          </Row>
+        </Grid>
 
         <p>
-          the <code>{`<Notification />`}</code> component expects a <code>message</code> object...
+          notice that the message object's <code>text</code> property is the only one required.
         </p>
-
-        <pre>{`   <Notification message={ message } />`}</pre>
-
-        <p>
-          ...which has the following shape.
-        </p>
-
-        <pre>{`    message = {
-      text: String,
-      type: 'error' | 'info' | 'success' | 'warning',
-      autoClose: boolean, // optional. default: true
-      onClick: function, // optional. default: null
-      onClose: function, // optional. default: null
-    }`}</pre>
 
         <h4><code>message.text</code></h4>
 
