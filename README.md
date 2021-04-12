@@ -7,7 +7,7 @@
 
 ## Demo
 
-[https://mbwatson.github.io/react-notifications](live demo) with lots of examples. code lives in the `example` directory.
+[live demo](https://mbwatson.github.io/react-notifications) with lots of examples. code lives in the `example` directory.
 
 ## Install
 
