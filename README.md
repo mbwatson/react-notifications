@@ -5,9 +5,9 @@
 [![NPM](https://img.shields.io/npm/v/react-notifications.svg)](https://www.npmjs.com/package/react-notifications) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
 
-## Demo
+## Documentation & Examples
 
-[live demo](https://mbwatson.github.io/react-notifications) with lots of examples. code lives in the `example` directory.
+[https://mbwatson.github.io/react-notifications](https://mbwatson.github.io/react-notifications) has details about the API and several examples. its code lives in the `example` directory.
 
 ## Install
 
@@ -34,7 +34,7 @@ import 'react-notifications/dist/index.css'
 </Notifications>
 ```
 
-use the `useNotifications` hook to interact with the current notifications in your own components.
+use the `useNotifications` hook to interact with the current notifications in your own components down your application tree.
 
 
 ```jsx
