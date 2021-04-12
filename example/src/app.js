@@ -240,7 +240,7 @@ const App = ({ children }) => {
         <header>
           <h1>@mwatson/react-notifications</h1>
           <span className="header-links">
-            <a href="https://www.npmjs.com/package/react-notifications" rel="noreferrer noopener" target="_blank">
+            <a href="https://www.npmjs.com/package/@mwatson/react-notifications" rel="noreferrer noopener" target="_blank">
               <svg version="1.1" x="0px" y="0px" width="54" height="21" viewBox="0 0 270 105" xmlns="http://www.w3.org/2000/svg">
                 <path d="m75 97.5v-7.5h-75v-90h270v90h-135v15h-60zm45-15v-7.5h30v-60h-60v75h30zm0-37.5v-15h15v30h-15zm-75 7.5v-22.5h15v45h15v-60h-60v60h30zm150 0v-22.5h15v45h15v-45h15v45h15v-60h-90v60h30z" fill="#cb3837" stroke-width=".5"/>
               </svg>
