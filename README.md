@@ -12,7 +12,7 @@
 ## Install
 
 ```bash
-npm install --save react-notifications
+npm install --save @mwatson/react-notifications
 ```
 
 ## Usage
