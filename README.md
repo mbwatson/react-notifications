@@ -22,7 +22,7 @@ import the `Notifications` component from `@mwatson/react-notifications`...
 
 ```jsx
 // App.js
-import { Notifications } from 'react-notifications'
+import { Notifications } from '@mwatson/react-notifications'
 import 'react-notifications/dist/index.css'
 ```
 
