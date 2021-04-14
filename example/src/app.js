@@ -64,13 +64,13 @@ import 'react-notifications/dist/index.css'`}
         </Grid>
 
         <p>
-          notice that the message object's <code>text</code> property is the only one required.
+          notice that <code>text</code> is the only one required property.
         </p>
 
         <h4><code>message.text</code></h4>
 
         <p>
-          the value of the <code>text</code> property of the message object defines the text the show within the notification.
+          this is the text to show in the notification. text is all that is supported.
         </p>
 
         <Grid fluid className="grid">
@@ -91,8 +91,7 @@ import 'react-notifications/dist/index.css'`}
         <h4><code>message.type</code></h4>
 
         <p>
-          the <code>type</code> property of the message object determines the styling the notification receives.
-          there are four notification types; <strong>info</strong> is the default.
+          this determines the notification's style &mdash; color scheme & icon. there are four notification types; <strong>info</strong> is the default.
         </p>
 
         <Grid fluid className="grid">
@@ -165,7 +164,7 @@ import 'react-notifications/dist/index.css'`}
         <h4><code>message.autoClose</code></h4>
 
         <p>
-          the value of the <code>autoClose</code> property of the message object determines whether the notification closes itself.
+          this determines whether the notification closes itself or remains open until clicked.
           the default value is <code>true</code>.
         </p>
 
@@ -209,7 +208,7 @@ import 'react-notifications/dist/index.css'`}
         <h4><code>message.onClick</code> && <code>message.onClose</code></h4>
 
         <p>
-          the <code>onClick</code> property of the message object provides a callback that fires when the notification is clicked.
+          this lets you define a callback that fires when the notification is clicked.
         </p>
 
         <Grid fluid className="grid">
@@ -233,7 +232,7 @@ import 'react-notifications/dist/index.css'`}
         </Grid>
 
         <p>
-          the <code>onClose</code> property of the message object provides a callback that fires when the notification closes.
+          this lets you define a callback that fires when the notification closes.
         </p>
 
         <Grid fluid className="grid">
@@ -257,7 +256,7 @@ import 'react-notifications/dist/index.css'`}
         </Grid>
       </section>
 
-      </Fragment>
+    </Fragment>
     )
   }
 
